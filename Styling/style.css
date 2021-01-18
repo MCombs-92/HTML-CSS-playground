@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+
+/* Base CSS styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #ddd;
+    color: #333;
+    line-height: 1.5;
+    min-height: 110vh;
+    /* background-image: url(/Resources/Background.jpg);
+    position: fixed; */
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+h1, h2 {
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 10px 0px;
+}
+
+p {
+    margin: 10px 25px;
+}
+
+img {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Background styling */
+
+.background {
+    width: 100%;
+    height: 105vh;
+    background: url(/Resources/Background.jpg);
+    position: fixed;
+    z-index: -1;
+}
+
+/* Utility styling */
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.content {
+    max-width: 1400px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+    height: 1100px;
+    background-color: black;
+}
+
+.grid {
+    display: grid;
+    
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+/* Navbar styling */
+
+.navbar {
+    background-color: #333;
+    color: #fff;
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    z-index: 1;
+}
+
+.navbar .flex {
+    justify-content: space-between;
+}
+
+.navbar a {
+    color: #fff;
+}
+
+/* About section styling */
+
+.about {
+    width: 100%;
+    background: #ccc;
+    position:relative;
+    top: 70px;
+    margin:0 auto;
+    text-align: center;
+}
+
+.about img {
+    min-width: 150px;
+    max-width: 15%;
+    margin: 50px 0 25px 0;
+}
+
+.introtext h1 {
+    font-weight: bold;
+    font-size: 36pt;
+    margin-bottom: 100px;
+}
+
+.sol {
+    color: red;
+}
+
+/* Who section styling */
+
+.who {
+    position:relative;
+    top: 70px;
+    margin-top: 50px;
+}
+
+.who h1 {
+    font-weight: bold;
+}
+
+.who .info {
+    margin: 50px 0 100px 0;
+}
+
+.who .info p {
+    font-size: 14pt;
+}
+
+/* Footer section styling */
+
+.footer {
+    background-color: black;
+    color: #fff;
+    height: 60px;
+    position: relative;
+    top: 70px;
+}
+
+.footer .flex {
+    justify-content: space-between;
+}
+
+.footer li {
+    margin: 0 20px;
+}
+
