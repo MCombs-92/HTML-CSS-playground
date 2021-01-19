@@ -1,3 +1,5 @@
+// Variable instantiation
+
 let theme = localStorage.getItem('theme');
 let slider = localStorage.getItem('slider')
 var toggle = document.getElementById('darkmodetoggle')
@@ -7,23 +9,30 @@ var about = document.getElementById('about');
 var who = document.getElementById('who');
 var footer = document.getElementById('footer');
 
+// Inital localStorage variable prints
+
 console.log(theme)
 console.log(slider)
+
+// First time visitor localStorage variable creation
 
 if(slider == null) {
     slider == 'checked'
     localStorage.setItem('slider', 'checked')
 }
 
+if(theme == null) {
+    theme == 'light'
+    localStorage.setItem('theme', 'light')
+}
+
+//Checks for loading proper toggle and theme states
+
 if(slider == 'checked') {
     toggle.checked = true;
 }
 else if(slider == 'unchecked') {
     toggle.checked = false;
-}
-
-if(theme == null) {
-    theme == 'light'
 }
 
 if(theme == 'light') {
@@ -39,7 +48,7 @@ else if(theme == 'dark') {
     document.body.style.color = '#fff';
 }
 
-
+//Event listener for updating localStorage variables when toggle switch is used
 
 toggle.addEventListener('change', function() {
     if(toggle.checked) {
