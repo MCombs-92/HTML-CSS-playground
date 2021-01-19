@@ -5,6 +5,8 @@
 :root {
     --Primary-color: #1affd1;
     --Secondary-color: #05dff7;
+    --Dark-primary: #333;
+    --Dark-seconday: #111;
 }
 
 
@@ -71,18 +73,9 @@ img {
 
 .flex {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     height: 100%;
-}
-
-.content {
-    max-width: 1400px;
-    margin: 0 auto;
-    overflow: auto;
-    padding: 0 40px;
-    height: 1100px;
-    background-color: black;
 }
 
 .grid {
@@ -98,9 +91,17 @@ img {
     text-align: right;
 }
 
+.darkprimary {
+    background-color: var(--Dark-primary);
+}
+
+.darksecondary {
+    background-color: var(--Dark-seconday);
+}
+
 /* Navbar styling */
 
-.navbar {
+#navbar {
     background-color: var(--Secondary-color);
     color: #fff;
     width: 100%;
@@ -109,17 +110,78 @@ img {
     z-index: 1;
 }
 
-.navbar .flex {
-    justify-content: space-between;
+#navbar .flex {
+
 }
 
-.navbar a {
+#navbar .switch {
+    width: 60px;
+    height: 34px;
+    margin: 0px 25px;
+    position: relative;
+    top: -52px;
+    float: right;   
+}
+
+#navbar .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+#navbar .switch .slider {
+    border-radius: 34px;
+}
+
+#navbar .switch .slider:before {
+    border-radius: 50px;
+}
+
+#navbar .switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+#navbar .switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+#navbar input:checked + .slider {
+    background-color: var(--Secondary-color);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+#navbar a {
     color: #fff;
 }
 
 /* About section styling */
 
-.about {
+#about {
     width: 100%;
     background: #aaa;
     position:relative;
@@ -128,13 +190,13 @@ img {
     text-align: center;
 }
 
-.about .flex {
+#about .flex {
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.about img {
+#about img {
     min-width: 150px;
     max-width: 15%;
     margin: 50px 0 25px 0;
@@ -152,27 +214,27 @@ img {
 
 /* Who section styling */
 
-.who {
+#who {
     position:relative;
-    top: 70px;
-    margin-top: 50px;
+    /* top: 70px; */
+    margin-top: 120px;
 }
 
-.who h1 {
+#who h1 {
     font-weight: bold;
 }
 
-.who .info {
+#who .info {
     margin: 50px 0 100px 0;
 }
 
-.who .info p {
+#who .info p {
     font-size: 14pt;
 }
 
 /* Footer section styling */
 
-.footer {
+#footer {
     background-color: black;
     color: #fff;
     height: 60px;
@@ -180,59 +242,63 @@ img {
     top: 70px;
 }
 
-.footer .flex {
+#footer .flex {
     justify-content: space-between;
 }
 
-.footer li {
+#footer li {
     margin: 0 20px;
 }
 
 /* Media queries */
 
-@media (max-width: 1920px) {
-    body {
-
+@media (max-width: 1600px) {
+    .container {
+        max-width: 1000px;
     }
 }
 
-@media (max-width: 1100px) {
-    body {
-
+@media (max-width: 1200px) {
+    .container {
+        max-width: 600px;
     }
 }
 
 @media (max-width: 800px) {
 
-    .about, .who, .footer {
+    #about, #who, #footer {
         top: 50px;
     }
 
-    .navbar {
+    #navbar {
         height: 50px;
     }
 
-    .navbar .flex {
+    #navbar .switch {
+        top: -42px;
+    }
+
+    #navbar .flex {
         justify-content: flex-start;
     }
 
-    .navbar h1 {
+    #navbar h1 {
         font-size: 18pt;
     }
 
-    .navbar h2 {
+    #navbar h2 {
         display: none;
     }
 
-    .who, .who .right, .who .left {
+    #who, #who .right, #who .left {
         text-align: center;
     }
 
-    .footer .flex {
+    #footer .flex {
         justify-content: center;
     }
 
-    .footer p {
+    #footer p {
         display: none;
     }
 
